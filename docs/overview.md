@@ -6,5 +6,5 @@ slug: /
 ---
 
 The goal of this project is to create real-time collaborative Jupyter Notebooks. Think Google Docs meets Jupyter.
-This was inspired out of frustration with [Google Colab](colab.research.google.com), which, ironically, is not collaborative
+This was inspired out of frustration with [Google Colab](https://colab.research.google.com), which, ironically, is not collaborative
 at all. 
