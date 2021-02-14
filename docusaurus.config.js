@@ -71,8 +71,8 @@ module.exports = {
               href: "https://www.electronjs.org/",
             },
             {
-              label: "Jupyter Kernel",
-              href: "https://www.electronjs.org/",
+              label: "Jupyter IPython Kernel",
+              href: "https://ipython.org/",
             },
             {
               label: "Socket IO",
