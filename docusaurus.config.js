@@ -38,7 +38,7 @@ module.exports = {
           items: [
             {
               label: "Actually Colab",
-              href: "https://www.actuallycolab.org",
+              href: "https://actuallycolab.org",
             },
             {
               label: "GitHub",
