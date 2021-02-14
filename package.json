@@ -1,14 +1,13 @@
 {
-  "name": "docs",
+  "name": "actually-colab-docs",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "docusaurus start",
+    "start": "docusaurus start --port 4001",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy",
-    "serve": "docusaurus serve",
+    "deploy": "docusaurus build && netlify deploy --prod",
     "clear": "docusaurus clear"
   },
   "dependencies": {
@@ -30,5 +29,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "netlify-cli": "^3.7.1"
   }
 }

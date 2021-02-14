@@ -1,19 +1,19 @@
 module.exports = {
-  title: 'My Site',
-  tagline: 'The tagline of my site',
-  url: 'https://your-docusaurus-test-site.com',
+  title: 'Actually Colab',
+  tagline: 'Real-time collaborative Jupyter notebooks',
+  url: 'https://docs.actuallycolab.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'actually-colab',
+  projectName: 'docs',
   themeConfig: {
     navbar: {
-      title: 'My Site',
+      title: 'Actually Colab',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'Actually Colab Logo',
+        src: 'img/logo512.png',
       },
       items: [
         {
@@ -72,7 +72,7 @@ module.exports = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/actually-colab',
             },
           ],
         },
