@@ -1,103 +1,111 @@
 module.exports = {
-  title: 'Actually Colab',
-  tagline: 'Real-time collaborative Jupyter notebooks',
-  url: 'https://docs.actuallycolab.org',
-  baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
-  organizationName: 'actually-colab',
-  projectName: 'docs',
+  title: "Actually Colab",
+  tagline: "Real-time collaborative Jupyter notebooks",
+  url: "https://docs.actuallycolab.org",
+  baseUrl: "/",
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
+  favicon: "img/favicon.ico",
+  organizationName: "actually-colab",
+  projectName: "docs",
   themeConfig: {
     navbar: {
-      title: 'Actually Colab',
+      title: "Actually Colab",
       logo: {
-        alt: 'Actually Colab Logo',
-        src: 'img/logo512.png',
+        alt: "Actually Colab Logo",
+        src: "img/logo512.png",
       },
       items: [
         {
-          to: 'docs/',
-          activeBasePath: 'docs',
-          label: 'Docs',
-          position: 'left',
+          to: "docs/",
+          activeBasePath: "docs",
+          label: "Docs",
+          position: "left",
         },
-        {to: 'blog', label: 'Blog', position: 'left'},
+        { to: "blog", label: "Blog", position: "left" },
         {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
-          position: 'right',
+          href: "https://github.com/actually-colab/docs",
+          label: "GitHub",
+          position: "right",
         },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Docs',
+          title: "Community",
           items: [
             {
-              label: 'Style Guide',
-              to: 'docs/',
+              label: "Actually Colab",
+              href: "https://www.actuallycolab.org",
             },
             {
-              label: 'Second Doc',
-              to: 'docs/doc2/',
+              label: "GitHub",
+              href: "https://github.com/actually-colab",
             },
           ],
         },
         {
-          title: 'Community',
+          title: "Creators",
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: "Jeff",
+              href: "https://jefftc.com/",
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              label: "Bailey",
+              href: "https://btin.io",
             },
           ],
         },
         {
-          title: 'More',
+          title: "Open Source Tools Used",
           items: [
             {
-              label: 'Blog',
-              to: 'blog',
+              label: "Docusaurus",
+              href: "https://v2.docusaurus.io/",
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/actually-colab',
+              label: "Electron",
+              href: "https://www.electronjs.org/",
+            },
+            {
+              label: "Jupyter Kernel",
+              href: "https://www.electronjs.org/",
+            },
+            {
+              label: "Socket IO",
+              href: "https://socket.io/",
+            },
+            {
+              label: "Serverless Framework",
+              href: "https://www.serverless.com/",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Actually Colab.`,
     },
   },
   presets: [
     [
-      '@docusaurus/preset-classic',
+      "@docusaurus/preset-classic",
       {
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+            "https://github.com/facebook/docusaurus/edit/master/website/",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+            "https://github.com/facebook/docusaurus/edit/master/website/blog/",
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
       },
     ],
