@@ -1,5 +1,6 @@
 module.exports = {
-  someSidebar: {
-    Project: ['overview'],
+  docs: {
+    Project: ["overview"],
+    Client: require("./typedoc-sidebar.js"),
   },
 };

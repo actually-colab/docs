@@ -110,4 +110,13 @@ module.exports = {
       },
     ],
   ],
+  plugins: [
+    [
+      "docusaurus-plugin-typedoc",
+      {
+        entryPoints: ["../editor/client/src/index.ts"],
+        tsconfig: "../editor/client/tsconfig.json",
+      },
+    ],
+  ],
 };

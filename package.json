@@ -1,6 +1,7 @@
 {
   "name": "actually-colab-docs",
   "version": "0.0.0",
+  "license": "MIT",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start --port 4001",
@@ -30,6 +31,8 @@
     ]
   },
   "devDependencies": {
-    "netlify-cli": "^3.7.1"
+    "docusaurus-plugin-typedoc": "^0.12.0",
+    "netlify-cli": "^3.7.1",
+    "typedoc": "^0.20.34"
   }
 }
