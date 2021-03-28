@@ -71,12 +71,16 @@ module.exports = {
               href: "https://www.electronjs.org/",
             },
             {
+              label: "React.js",
+              href: "https://www.reactjs.org/",
+            },
+            {
               label: "Jupyter IPython Kernel",
               href: "https://ipython.org/",
             },
             {
-              label: "Socket IO",
-              href: "https://socket.io/",
+              label: "PostgreSQL",
+              href: "https://www.postgresql.org/",
             },
             {
               label: "Serverless Framework",
@@ -94,15 +98,11 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
-          editUrl:
-            "https://github.com/facebook/docusaurus/edit/master/website/",
+          editUrl: "https://github.com/actually-colab/docs/edit/master",
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            "https://github.com/facebook/docusaurus/edit/master/website/blog/",
+          editUrl: "https://github.com/actually-colab/docs/edit/master",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
