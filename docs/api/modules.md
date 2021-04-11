@@ -18,15 +18,8 @@ hide_title: true
 
 ### Interfaces
 
-- [DCell](interfaces/dcell.md)
-- [DNotebook](interfaces/dnotebook.md)
-- [DNotebookAccessLevel](interfaces/dnotebookaccesslevel.md)
-- [DUser](interfaces/duser.md)
 - [DevLoginData](interfaces/devlogindata.md)
 - [GoogleLoginData](interfaces/googlelogindata.md)
-- [Notebook](interfaces/notebook.md)
-- [NotebookAccessLevel](interfaces/notebookaccesslevel.md)
-- [NotebookContents](interfaces/notebookcontents.md)
 - [SessionRefreshLoginData](interfaces/sessionrefreshlogindata.md)
 
 ## Type aliases
@@ -35,12 +28,4 @@ hide_title: true
 
 Ƭ **LoginData**: [*DevLoginData*](interfaces/devlogindata.md) \| [*SessionRefreshLoginData*](interfaces/sessionrefreshlogindata.md) \| [*GoogleLoginData*](interfaces/googlelogindata.md)
 
-Defined in: [src/types.ts:68](https://github.com/actually-colab/editor/blob/0e7786b/client/src/types.ts#L68)
-
-___
-
-### NotebookAccessLevelType
-
-Ƭ **NotebookAccessLevelType**: *Full Access* \| *Read Only*
-
-Defined in: [src/types.ts:20](https://github.com/actually-colab/editor/blob/0e7786b/client/src/types.ts#L20)
+Defined in: [src/types.ts:21](https://github.com/actually-colab/editor/blob/9917bd3/client/src/types.ts#L21)

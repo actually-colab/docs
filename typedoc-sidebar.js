@@ -13,15 +13,8 @@ module.exports = [
     "type": "category",
     "label": "Interfaces",
     "items": [
-      "api/interfaces/dcell",
-      "api/interfaces/dnotebook",
-      "api/interfaces/dnotebookaccesslevel",
-      "api/interfaces/duser",
       "api/interfaces/devlogindata",
       "api/interfaces/googlelogindata",
-      "api/interfaces/notebook",
-      "api/interfaces/notebookaccesslevel",
-      "api/interfaces/notebookcontents",
       "api/interfaces/sessionrefreshlogindata"
     ]
   }

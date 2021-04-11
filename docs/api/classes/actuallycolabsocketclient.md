@@ -33,13 +33,13 @@ Name | Type | Description |
 
 Overrides: void
 
-Defined in: [src/socket/client.ts:48](https://github.com/actually-colab/editor/blob/0e7786b/client/src/socket/client.ts#L48)
+Defined in: [src/socket/client.ts:108](https://github.com/actually-colab/editor/blob/9917bd3/client/src/socket/client.ts#L108)
 
 ## Properties
 
 ### editCell
 
-• **editCell**: *DebouncedFunc*<(`nb\_id`: *string*, `cell\_id`: *string*, `cellData`: { `contents?`: *string* ; `cursor_pos?`: *null* \| *number* ; `language?`: *python* \| *markdown*  }) => *void*\>
+• **editCell**: *MemoizeDebouncedFunction*<(`nb\_id`: *string*, `cell\_id`: *string*, `cellData`: *Required*<Pick<DCell, *language* \| *contents* \| *cursor_col* \| *cursor_row*\>\>) => *void*\>
 
 Edits the contents of a cell.
 
@@ -51,7 +51,7 @@ Will fail if cell lock not acquired.
 
 **`param`** Cell data to replace with
 
-Defined in: [src/socket/client.ts:184](https://github.com/actually-colab/editor/blob/0e7786b/client/src/socket/client.ts#L184)
+Defined in: [src/socket/client.ts:414](https://github.com/actually-colab/editor/blob/9917bd3/client/src/socket/client.ts#L414)
 
 ___
 
@@ -59,7 +59,23 @@ ___
 
 • `Private` **socketClient**: *w3cwebsocket*
 
-Defined in: [src/socket/client.ts:48](https://github.com/actually-colab/editor/blob/0e7786b/client/src/socket/client.ts#L48)
+Defined in: [src/socket/client.ts:108](https://github.com/actually-colab/editor/blob/9917bd3/client/src/socket/client.ts#L108)
+
+___
+
+### updateOutput
+
+• **updateOutput**: *MemoizeDebouncedFunction*<(`nb\_id`: *string*, `cell\_id`: *string*, `output`: *string*) => *void*\>
+
+Sends a compressed output for a cell to be shared with users in the notebook.
+
+**`param`** Notebook to update
+
+**`param`** Cell to update
+
+**`param`** Content to share
+
+Defined in: [src/socket/client.ts:447](https://github.com/actually-colab/editor/blob/9917bd3/client/src/socket/client.ts#L447)
 
 ___
 
@@ -75,20 +91,20 @@ Defined in: node_modules/eventemitter3/index.d.ts:9
 
 ### addListener
 
-▸ **addListener**<T\>(`event`: T, `fn`: (...`args`: *ArgumentMap*<ActuallyColabEventListeners\>[*Extract*<T, *connect* \| *close* \| *error* \| *notebook_opened* \| *cell_created* \| *cell_locked* \| *cell_unlocked* \| *cell_edited*\>]) => *void*, `context?`: *any*): [*ActuallyColabSocketClient*](actuallycolabsocketclient.md)
+▸ **addListener**<T\>(`event`: T, `fn`: (...`args`: *ArgumentMap*<ActuallyColabEventListeners\>[*Extract*<T, keyof SocketConnectionListeners \| keyof SocketMessageListeners\>]) => *void*, `context?`: *any*): [*ActuallyColabSocketClient*](actuallycolabsocketclient.md)
 
 #### Type parameters:
 
 Name | Type |
 :------ | :------ |
-`T` | *connect* \| *close* \| *error* \| *notebook_opened* \| *cell_created* \| *cell_locked* \| *cell_unlocked* \| *cell_edited* |
+`T` | keyof SocketConnectionListeners \| keyof SocketMessageListeners |
 
 #### Parameters:
 
 Name | Type |
 :------ | :------ |
 `event` | T |
-`fn` | (...`args`: *ArgumentMap*<ActuallyColabEventListeners\>[*Extract*<T, *connect* \| *close* \| *error* \| *notebook_opened* \| *cell_created* \| *cell_locked* \| *cell_unlocked* \| *cell_edited*\>]) => *void* |
+`fn` | (...`args`: *ArgumentMap*<ActuallyColabEventListeners\>[*Extract*<T, keyof SocketConnectionListeners \| keyof SocketMessageListeners\>]) => *void* |
 `context?` | *any* |
 
 **Returns:** [*ActuallyColabSocketClient*](actuallycolabsocketclient.md)
@@ -96,6 +112,36 @@ Name | Type |
 Inherited from: void
 
 Defined in: node_modules/eventemitter3/index.d.ts:45
+
+___
+
+### close
+
+▸ **close**(): *void*
+
+Disconnects from server, but does not remove event listeners.
+
+**Returns:** *void*
+
+Defined in: [src/socket/client.ts:276](https://github.com/actually-colab/editor/blob/9917bd3/client/src/socket/client.ts#L276)
+
+___
+
+### closeNotebook
+
+▸ **closeNotebook**(`nb_id`: *string*): *void*
+
+Closes a connection to a specific notbeook.
+
+#### Parameters:
+
+Name | Type | Description |
+:------ | :------ | :------ |
+`nb_id` | *string* | Notebook to disconnect from    |
+
+**Returns:** *void*
+
+Defined in: [src/socket/client.ts:309](https://github.com/actually-colab/editor/blob/9917bd3/client/src/socket/client.ts#L309)
 
 ___
 
@@ -114,7 +160,26 @@ Name | Type | Description |
 
 **Returns:** *void*
 
-Defined in: [src/socket/client.ts:150](https://github.com/actually-colab/editor/blob/0e7786b/client/src/socket/client.ts#L150)
+Defined in: [src/socket/client.ts:375](https://github.com/actually-colab/editor/blob/9917bd3/client/src/socket/client.ts#L375)
+
+___
+
+### deleteCell
+
+▸ **deleteCell**(`nb_id`: *string*, `cell_id`: *string*): *void*
+
+Deletes a specific cell from a specific notebook
+
+#### Parameters:
+
+Name | Type | Description |
+:------ | :------ | :------ |
+`nb_id` | *string* | Notebook containing the cell   |
+`cell_id` | *string* | Cell to delete    |
+
+**Returns:** *void*
+
+Defined in: [src/socket/client.ts:436](https://github.com/actually-colab/editor/blob/9917bd3/client/src/socket/client.ts#L436)
 
 ___
 
@@ -127,13 +192,13 @@ and closes the connection to the Actually Colab Socket API.
 
 **Returns:** *void*
 
-Defined in: [src/socket/client.ts:124](https://github.com/actually-colab/editor/blob/0e7786b/client/src/socket/client.ts#L124)
+Defined in: [src/socket/client.ts:284](https://github.com/actually-colab/editor/blob/9917bd3/client/src/socket/client.ts#L284)
 
 ___
 
 ### emit
 
-▸ **emit**<T\>(`event`: T, ...`args`: *ArgumentMap*<ActuallyColabEventListeners\>[*Extract*<T, *connect* \| *close* \| *error* \| *notebook_opened* \| *cell_created* \| *cell_locked* \| *cell_unlocked* \| *cell_edited*\>]): *boolean*
+▸ **emit**<T\>(`event`: T, ...`args`: *ArgumentMap*<ActuallyColabEventListeners\>[*Extract*<T, keyof SocketConnectionListeners \| keyof SocketMessageListeners\>]): *boolean*
 
 Calls each of the listeners registered for a given event.
 
@@ -141,14 +206,14 @@ Calls each of the listeners registered for a given event.
 
 Name | Type |
 :------ | :------ |
-`T` | *connect* \| *close* \| *error* \| *notebook_opened* \| *cell_created* \| *cell_locked* \| *cell_unlocked* \| *cell_edited* |
+`T` | keyof SocketConnectionListeners \| keyof SocketMessageListeners |
 
 #### Parameters:
 
 Name | Type |
 :------ | :------ |
 `event` | T |
-`...args` | *ArgumentMap*<ActuallyColabEventListeners\>[*Extract*<T, *connect* \| *close* \| *error* \| *notebook_opened* \| *cell_created* \| *cell_locked* \| *cell_unlocked* \| *cell_edited*\>] |
+`...args` | *ArgumentMap*<ActuallyColabEventListeners\>[*Extract*<T, keyof SocketConnectionListeners \| keyof SocketMessageListeners\>] |
 
 **Returns:** *boolean*
 
@@ -160,12 +225,12 @@ ___
 
 ### eventNames
 
-▸ **eventNames**(): (*connect* \| *close* \| *error* \| *notebook_opened* \| *cell_created* \| *cell_locked* \| *cell_unlocked* \| *cell_edited*)[]
+▸ **eventNames**(): (keyof SocketConnectionListeners \| keyof SocketMessageListeners)[]
 
 Return an array listing the events for which the emitter has registered
 listeners.
 
-**Returns:** (*connect* \| *close* \| *error* \| *notebook_opened* \| *cell_created* \| *cell_locked* \| *cell_unlocked* \| *cell_edited*)[]
+**Returns:** (keyof SocketConnectionListeners \| keyof SocketMessageListeners)[]
 
 Inherited from: void
 
@@ -179,13 +244,13 @@ ___
 
 **Returns:** *void*
 
-Defined in: [src/socket/client.ts:64](https://github.com/actually-colab/editor/blob/0e7786b/client/src/socket/client.ts#L64)
+Defined in: [src/socket/client.ts:124](https://github.com/actually-colab/editor/blob/9917bd3/client/src/socket/client.ts#L124)
 
 ___
 
 ### listenerCount
 
-▸ **listenerCount**(`event`: *connect* \| *close* \| *error* \| *notebook_opened* \| *cell_created* \| *cell_locked* \| *cell_unlocked* \| *cell_edited*): *number*
+▸ **listenerCount**(`event`: keyof SocketConnectionListeners \| keyof SocketMessageListeners): *number*
 
 Return the number of listeners listening to a given event.
 
@@ -193,7 +258,7 @@ Return the number of listeners listening to a given event.
 
 Name | Type |
 :------ | :------ |
-`event` | *connect* \| *close* \| *error* \| *notebook_opened* \| *cell_created* \| *cell_locked* \| *cell_unlocked* \| *cell_edited* |
+`event` | keyof SocketConnectionListeners \| keyof SocketMessageListeners |
 
 **Returns:** *number*
 
@@ -205,7 +270,7 @@ ___
 
 ### listeners
 
-▸ **listeners**<T\>(`event`: T): (...`args`: *ArgumentMap*<ActuallyColabEventListeners\>[*Extract*<T, *connect* \| *close* \| *error* \| *notebook_opened* \| *cell_created* \| *cell_locked* \| *cell_unlocked* \| *cell_edited*\>]) => *void*[]
+▸ **listeners**<T\>(`event`: T): (...`args`: *ArgumentMap*<ActuallyColabEventListeners\>[*Extract*<T, keyof SocketConnectionListeners \| keyof SocketMessageListeners\>]) => *void*[]
 
 Return the listeners registered for a given event.
 
@@ -213,7 +278,7 @@ Return the listeners registered for a given event.
 
 Name | Type |
 :------ | :------ |
-`T` | *connect* \| *close* \| *error* \| *notebook_opened* \| *cell_created* \| *cell_locked* \| *cell_unlocked* \| *cell_edited* |
+`T` | keyof SocketConnectionListeners \| keyof SocketMessageListeners |
 
 #### Parameters:
 
@@ -221,7 +286,7 @@ Name | Type |
 :------ | :------ |
 `event` | T |
 
-**Returns:** (...`args`: *ArgumentMap*<ActuallyColabEventListeners\>[*Extract*<T, *connect* \| *close* \| *error* \| *notebook_opened* \| *cell_created* \| *cell_locked* \| *cell_unlocked* \| *cell_edited*\>]) => *void*[]
+**Returns:** (...`args`: *ArgumentMap*<ActuallyColabEventListeners\>[*Extract*<T, keyof SocketConnectionListeners \| keyof SocketMessageListeners\>]) => *void*[]
 
 Inherited from: void
 
@@ -244,26 +309,26 @@ Name | Type | Description |
 
 **Returns:** *void*
 
-Defined in: [src/socket/client.ts:160](https://github.com/actually-colab/editor/blob/0e7786b/client/src/socket/client.ts#L160)
+Defined in: [src/socket/client.ts:385](https://github.com/actually-colab/editor/blob/9917bd3/client/src/socket/client.ts#L385)
 
 ___
 
 ### off
 
-▸ **off**<T\>(`event`: T, `fn?`: (...`args`: *ArgumentMap*<ActuallyColabEventListeners\>[*Extract*<T, *connect* \| *close* \| *error* \| *notebook_opened* \| *cell_created* \| *cell_locked* \| *cell_unlocked* \| *cell_edited*\>]) => *void*, `context?`: *any*, `once?`: *boolean*): [*ActuallyColabSocketClient*](actuallycolabsocketclient.md)
+▸ **off**<T\>(`event`: T, `fn?`: (...`args`: *ArgumentMap*<ActuallyColabEventListeners\>[*Extract*<T, keyof SocketConnectionListeners \| keyof SocketMessageListeners\>]) => *void*, `context?`: *any*, `once?`: *boolean*): [*ActuallyColabSocketClient*](actuallycolabsocketclient.md)
 
 #### Type parameters:
 
 Name | Type |
 :------ | :------ |
-`T` | *connect* \| *close* \| *error* \| *notebook_opened* \| *cell_created* \| *cell_locked* \| *cell_unlocked* \| *cell_edited* |
+`T` | keyof SocketConnectionListeners \| keyof SocketMessageListeners |
 
 #### Parameters:
 
 Name | Type |
 :------ | :------ |
 `event` | T |
-`fn?` | (...`args`: *ArgumentMap*<ActuallyColabEventListeners\>[*Extract*<T, *connect* \| *close* \| *error* \| *notebook_opened* \| *cell_created* \| *cell_locked* \| *cell_unlocked* \| *cell_edited*\>]) => *void* |
+`fn?` | (...`args`: *ArgumentMap*<ActuallyColabEventListeners\>[*Extract*<T, keyof SocketConnectionListeners \| keyof SocketMessageListeners\>]) => *void* |
 `context?` | *any* |
 `once?` | *boolean* |
 
@@ -277,7 +342,7 @@ ___
 
 ### on
 
-▸ **on**<T\>(`event`: T, `fn`: (...`args`: *ArgumentMap*<ActuallyColabEventListeners\>[*Extract*<T, *connect* \| *close* \| *error* \| *notebook_opened* \| *cell_created* \| *cell_locked* \| *cell_unlocked* \| *cell_edited*\>]) => *void*, `context?`: *any*): [*ActuallyColabSocketClient*](actuallycolabsocketclient.md)
+▸ **on**<T\>(`event`: T, `fn`: (...`args`: *ArgumentMap*<ActuallyColabEventListeners\>[*Extract*<T, keyof SocketConnectionListeners \| keyof SocketMessageListeners\>]) => *void*, `context?`: *any*): [*ActuallyColabSocketClient*](actuallycolabsocketclient.md)
 
 Add a listener for a given event.
 
@@ -285,14 +350,14 @@ Add a listener for a given event.
 
 Name | Type |
 :------ | :------ |
-`T` | *connect* \| *close* \| *error* \| *notebook_opened* \| *cell_created* \| *cell_locked* \| *cell_unlocked* \| *cell_edited* |
+`T` | keyof SocketConnectionListeners \| keyof SocketMessageListeners |
 
 #### Parameters:
 
 Name | Type |
 :------ | :------ |
 `event` | T |
-`fn` | (...`args`: *ArgumentMap*<ActuallyColabEventListeners\>[*Extract*<T, *connect* \| *close* \| *error* \| *notebook_opened* \| *cell_created* \| *cell_locked* \| *cell_unlocked* \| *cell_edited*\>]) => *void* |
+`fn` | (...`args`: *ArgumentMap*<ActuallyColabEventListeners\>[*Extract*<T, keyof SocketConnectionListeners \| keyof SocketMessageListeners\>]) => *void* |
 `context?` | *any* |
 
 **Returns:** [*ActuallyColabSocketClient*](actuallycolabsocketclient.md)
@@ -305,7 +370,7 @@ ___
 
 ### once
 
-▸ **once**<T\>(`event`: T, `fn`: (...`args`: *ArgumentMap*<ActuallyColabEventListeners\>[*Extract*<T, *connect* \| *close* \| *error* \| *notebook_opened* \| *cell_created* \| *cell_locked* \| *cell_unlocked* \| *cell_edited*\>]) => *void*, `context?`: *any*): [*ActuallyColabSocketClient*](actuallycolabsocketclient.md)
+▸ **once**<T\>(`event`: T, `fn`: (...`args`: *ArgumentMap*<ActuallyColabEventListeners\>[*Extract*<T, keyof SocketConnectionListeners \| keyof SocketMessageListeners\>]) => *void*, `context?`: *any*): [*ActuallyColabSocketClient*](actuallycolabsocketclient.md)
 
 Add a one-time listener for a given event.
 
@@ -313,14 +378,14 @@ Add a one-time listener for a given event.
 
 Name | Type |
 :------ | :------ |
-`T` | *connect* \| *close* \| *error* \| *notebook_opened* \| *cell_created* \| *cell_locked* \| *cell_unlocked* \| *cell_edited* |
+`T` | keyof SocketConnectionListeners \| keyof SocketMessageListeners |
 
 #### Parameters:
 
 Name | Type |
 :------ | :------ |
 `event` | T |
-`fn` | (...`args`: *ArgumentMap*<ActuallyColabEventListeners\>[*Extract*<T, *connect* \| *close* \| *error* \| *notebook_opened* \| *cell_created* \| *cell_locked* \| *cell_unlocked* \| *cell_edited*\>]) => *void* |
+`fn` | (...`args`: *ArgumentMap*<ActuallyColabEventListeners\>[*Extract*<T, keyof SocketConnectionListeners \| keyof SocketMessageListeners\>]) => *void* |
 `context?` | *any* |
 
 **Returns:** [*ActuallyColabSocketClient*](actuallycolabsocketclient.md)
@@ -345,13 +410,13 @@ Name | Type | Description |
 
 **Returns:** *void*
 
-Defined in: [src/socket/client.ts:140](https://github.com/actually-colab/editor/blob/0e7786b/client/src/socket/client.ts#L140)
+Defined in: [src/socket/client.ts:300](https://github.com/actually-colab/editor/blob/9917bd3/client/src/socket/client.ts#L300)
 
 ___
 
 ### removeAllListeners
 
-▸ **removeAllListeners**(`event?`: *connect* \| *close* \| *error* \| *notebook_opened* \| *cell_created* \| *cell_locked* \| *cell_unlocked* \| *cell_edited*): [*ActuallyColabSocketClient*](actuallycolabsocketclient.md)
+▸ **removeAllListeners**(`event?`: keyof SocketConnectionListeners \| keyof SocketMessageListeners): [*ActuallyColabSocketClient*](actuallycolabsocketclient.md)
 
 Remove all listeners, or those of the specified event.
 
@@ -359,7 +424,7 @@ Remove all listeners, or those of the specified event.
 
 Name | Type |
 :------ | :------ |
-`event?` | *connect* \| *close* \| *error* \| *notebook_opened* \| *cell_created* \| *cell_locked* \| *cell_unlocked* \| *cell_edited* |
+`event?` | keyof SocketConnectionListeners \| keyof SocketMessageListeners |
 
 **Returns:** [*ActuallyColabSocketClient*](actuallycolabsocketclient.md)
 
@@ -371,7 +436,7 @@ ___
 
 ### removeListener
 
-▸ **removeListener**<T\>(`event`: T, `fn?`: (...`args`: *ArgumentMap*<ActuallyColabEventListeners\>[*Extract*<T, *connect* \| *close* \| *error* \| *notebook_opened* \| *cell_created* \| *cell_locked* \| *cell_unlocked* \| *cell_edited*\>]) => *void*, `context?`: *any*, `once?`: *boolean*): [*ActuallyColabSocketClient*](actuallycolabsocketclient.md)
+▸ **removeListener**<T\>(`event`: T, `fn?`: (...`args`: *ArgumentMap*<ActuallyColabEventListeners\>[*Extract*<T, keyof SocketConnectionListeners \| keyof SocketMessageListeners\>]) => *void*, `context?`: *any*, `once?`: *boolean*): [*ActuallyColabSocketClient*](actuallycolabsocketclient.md)
 
 Remove the listeners of a given event.
 
@@ -379,14 +444,14 @@ Remove the listeners of a given event.
 
 Name | Type |
 :------ | :------ |
-`T` | *connect* \| *close* \| *error* \| *notebook_opened* \| *cell_created* \| *cell_locked* \| *cell_unlocked* \| *cell_edited* |
+`T` | keyof SocketConnectionListeners \| keyof SocketMessageListeners |
 
 #### Parameters:
 
 Name | Type |
 :------ | :------ |
 `event` | T |
-`fn?` | (...`args`: *ArgumentMap*<ActuallyColabEventListeners\>[*Extract*<T, *connect* \| *close* \| *error* \| *notebook_opened* \| *cell_created* \| *cell_locked* \| *cell_unlocked* \| *cell_edited*\>]) => *void* |
+`fn?` | (...`args`: *ArgumentMap*<ActuallyColabEventListeners\>[*Extract*<T, keyof SocketConnectionListeners \| keyof SocketMessageListeners\>]) => *void* |
 `context?` | *any* |
 `once?` | *boolean* |
 
@@ -395,6 +460,25 @@ Name | Type |
 Inherited from: void
 
 Defined in: node_modules/eventemitter3/index.d.ts:63
+
+___
+
+### sendChatMessage
+
+▸ **sendChatMessage**(`nb_id`: *string*, `message`: *string*): *void*
+
+Echoes a message into the notebook chat.
+
+#### Parameters:
+
+Name | Type | Description |
+:------ | :------ | :------ |
+`nb_id` | *string* | The notebook to broadcast to   |
+`message` | *string* | Text to send    |
+
+**Returns:** *void*
+
+Defined in: [src/socket/client.ts:477](https://github.com/actually-colab/editor/blob/9917bd3/client/src/socket/client.ts#L477)
 
 ___
 
@@ -411,13 +495,74 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [src/socket/client.ts:130](https://github.com/actually-colab/editor/blob/0e7786b/client/src/socket/client.ts#L130)
+Defined in: [src/socket/client.ts:290](https://github.com/actually-colab/editor/blob/9917bd3/client/src/socket/client.ts#L290)
+
+___
+
+### shareNotebook
+
+▸ **shareNotebook**(`emails`: *string*[], `nb_id`: *undefined* \| *null* \| *string* \| *number* \| *boolean*, `access_level`: NotebookAccessLevelType): *void*
+
+Shares a notebook with another user. The requesting user must have
+Full Access to share the notebook.
+
+#### Parameters:
+
+Name | Type | Description |
+:------ | :------ | :------ |
+`emails` | *string*[] | - |
+`nb_id` | *undefined* \| *null* \| *string* \| *number* \| *boolean* | id of the notebook to share   |
+`access_level` | NotebookAccessLevelType | permissions level for the user that the notebook is being shared with    |
+
+**Returns:** *void*
+
+Defined in: [src/socket/client.ts:321](https://github.com/actually-colab/editor/blob/9917bd3/client/src/socket/client.ts#L321)
+
+___
+
+### shareWorkshop
+
+▸ **shareWorkshop**(`emails`: *string*[], `ws_id`: *undefined* \| *null* \| *string* \| *number* \| *boolean*, `access_level`: WorkshopAccessLevelType): *void*
+
+Shares a workshop with another user. The requesting user must have
+Instructor access to share the notebook.
+
+#### Parameters:
+
+Name | Type | Description |
+:------ | :------ | :------ |
+`emails` | *string*[] | users to share with   |
+`ws_id` | *undefined* \| *null* \| *string* \| *number* \| *boolean* | id of the workshop to share   |
+`access_level` | WorkshopAccessLevelType | permissions level for the user that the workshop is being shared with    |
+
+**Returns:** *void*
+
+Defined in: [src/socket/client.ts:351](https://github.com/actually-colab/editor/blob/9917bd3/client/src/socket/client.ts#L351)
+
+___
+
+### startWorkshop
+
+▸ **startWorkshop**(`ws_id`: *undefined* \| *null* \| *string* \| *number* \| *boolean*): *void*
+
+Starts a new workshop. The requesting user must have
+Instructor access.
+
+#### Parameters:
+
+Name | Type | Description |
+:------ | :------ | :------ |
+`ws_id` | *undefined* \| *null* \| *string* \| *number* \| *boolean* | id of the workshop to share    |
+
+**Returns:** *void*
+
+Defined in: [src/socket/client.ts:365](https://github.com/actually-colab/editor/blob/9917bd3/client/src/socket/client.ts#L365)
 
 ___
 
 ### unlockCell
 
-▸ **unlockCell**(`nb_id`: *string*, `cell_id`: *string*): *void*
+▸ **unlockCell**(`nb_id`: *string*, `cell_id`: *string*, `cellData`: *Required*<Pick<DCell, *language* \| *contents* \| *cursor_col* \| *cursor_row*\>\>): *void*
 
 Releases a cell lock. Must have acquired lock.
 
@@ -426,8 +571,29 @@ Releases a cell lock. Must have acquired lock.
 Name | Type | Description |
 :------ | :------ | :------ |
 `nb_id` | *string* | Notebook to create cell in.   |
-`cell_id` | *string* | Cell to edit.    |
+`cell_id` | *string* | Cell to edit.   |
+`cellData` | *Required*<Pick<DCell, *language* \| *contents* \| *cursor_col* \| *cursor_row*\>\> | Cell data to replace with    |
 
 **Returns:** *void*
 
-Defined in: [src/socket/client.ts:170](https://github.com/actually-colab/editor/blob/0e7786b/client/src/socket/client.ts#L170)
+Defined in: [src/socket/client.ts:396](https://github.com/actually-colab/editor/blob/9917bd3/client/src/socket/client.ts#L396)
+
+___
+
+### unshareNotebook
+
+▸ **unshareNotebook**(`emails`: *string*[], `nb_id`: *undefined* \| *null* \| *string* \| *number* \| *boolean*): *void*
+
+Revokes notebook access from another user. The requesting user must have
+Full Access to share the notebook.
+
+#### Parameters:
+
+Name | Type | Description |
+:------ | :------ | :------ |
+`emails` | *string*[] | users to revoke access from   |
+`nb_id` | *undefined* \| *null* \| *string* \| *number* \| *boolean* | id of the notebook    |
+
+**Returns:** *void*
+
+Defined in: [src/socket/client.ts:336](https://github.com/actually-colab/editor/blob/9917bd3/client/src/socket/client.ts#L336)
