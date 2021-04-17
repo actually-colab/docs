@@ -20,7 +20,7 @@ hide_title: true
 
 • **idToken**: *string*
 
-Defined in: [src/types.ts:18](https://github.com/actually-colab/editor/blob/fb4735d/client/src/types.ts#L18)
+Defined in: [src/types.ts:18](https://github.com/actually-colab/editor/blob/27be0e5/client/src/types.ts#L18)
 
 ___
 
@@ -30,4 +30,4 @@ ___
 
 Overrides: void
 
-Defined in: [src/types.ts:17](https://github.com/actually-colab/editor/blob/fb4735d/client/src/types.ts#L17)
+Defined in: [src/types.ts:17](https://github.com/actually-colab/editor/blob/27be0e5/client/src/types.ts#L17)
