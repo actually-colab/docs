@@ -9,3 +9,7 @@ Add a markdown file to `blog/`
 ## Docs
 
 Add a markdown file to `docs/` and update `sidebars.js`
+
+## License
+
+`@actually-colab/docs` is [GPLv2 licensed](./LICENSE)

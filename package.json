@@ -1,7 +1,7 @@
 {
   "name": "actually-colab-docs",
   "version": "0.0.0",
-  "license": "MIT",
+  "license": "GPL-2.0-only",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start --port 4001",
