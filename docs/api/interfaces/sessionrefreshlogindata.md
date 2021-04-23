@@ -20,7 +20,7 @@ hide_title: true
 
 • **sessionToken**: *string*
 
-Defined in: [src/types.ts:13](https://github.com/actually-colab/editor/blob/27be0e5/client/src/types.ts#L13)
+Defined in: [src/types.ts:13](https://github.com/actually-colab/editor/blob/050624a/client/src/types.ts#L13)
 
 ___
 
@@ -30,4 +30,4 @@ ___
 
 Overrides: void
 
-Defined in: [src/types.ts:12](https://github.com/actually-colab/editor/blob/27be0e5/client/src/types.ts#L12)
+Defined in: [src/types.ts:12](https://github.com/actually-colab/editor/blob/050624a/client/src/types.ts#L12)
