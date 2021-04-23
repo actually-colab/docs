@@ -88,6 +88,15 @@ module.exports = {
             },
           ],
         },
+        {
+          title: "Sponsors",
+          items: [
+            {
+              label: "This site is powered by Netlify",
+              href: "https://netlify.com/",
+            },
+          ],
+        },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Actually Colab.`,
     },
