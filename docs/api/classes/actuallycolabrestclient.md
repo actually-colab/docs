@@ -24,7 +24,7 @@ Name | Type | Description |
 
 **Returns:** [*ActuallyColabRESTClient*](actuallycolabrestclient.md)
 
-Defined in: [src/REST/client.ts:15](https://github.com/actually-colab/editor/blob/050624a/client/src/REST/client.ts#L15)
+Defined in: [src/REST/client.ts:15](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/REST/client.ts#L15)
 
 ## Properties
 
@@ -32,7 +32,7 @@ Defined in: [src/REST/client.ts:15](https://github.com/actually-colab/editor/blo
 
 • `Private` **axiosInstance**: AxiosInstance
 
-Defined in: [src/REST/client.ts:15](https://github.com/actually-colab/editor/blob/050624a/client/src/REST/client.ts#L15)
+Defined in: [src/REST/client.ts:15](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/REST/client.ts#L15)
 
 ## Methods
 
@@ -52,7 +52,7 @@ Name | Type | Default value | Description |
 
 **Returns:** *Promise*<Notebook\>
 
-Defined in: [src/REST/client.ts:116](https://github.com/actually-colab/editor/blob/050624a/client/src/REST/client.ts#L116)
+Defined in: [src/REST/client.ts:116](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/REST/client.ts#L116)
 
 ___
 
@@ -72,7 +72,7 @@ Name | Type | Description |
 
 **Returns:** *Promise*<Workshop\>
 
-Defined in: [src/REST/client.ts:155](https://github.com/actually-colab/editor/blob/050624a/client/src/REST/client.ts#L155)
+Defined in: [src/REST/client.ts:155](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/REST/client.ts#L155)
 
 ___
 
@@ -91,7 +91,7 @@ Name | Type | Description |
 
 **Returns:** *Promise*<{ `sessionToken`: *string* ; `user`: *DUser*  }\>
 
-Defined in: [src/REST/client.ts:63](https://github.com/actually-colab/editor/blob/050624a/client/src/REST/client.ts#L63)
+Defined in: [src/REST/client.ts:63](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/REST/client.ts#L63)
 
 ___
 
@@ -109,7 +109,7 @@ Name | Type | Description |
 
 **Returns:** *Promise*<NotebookContents\>
 
-Defined in: [src/REST/client.ts:102](https://github.com/actually-colab/editor/blob/050624a/client/src/REST/client.ts#L102)
+Defined in: [src/REST/client.ts:102](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/REST/client.ts#L102)
 
 ___
 
@@ -121,7 +121,7 @@ Fetches all notebooks that this user has access to.
 
 **Returns:** *Promise*<Notebook[]\>
 
-Defined in: [src/REST/client.ts:93](https://github.com/actually-colab/editor/blob/050624a/client/src/REST/client.ts#L93)
+Defined in: [src/REST/client.ts:93](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/REST/client.ts#L93)
 
 ___
 
@@ -133,7 +133,7 @@ Fetches all workshops that this user has access to.
 
 **Returns:** *Promise*<Workshop[]\>
 
-Defined in: [src/REST/client.ts:170](https://github.com/actually-colab/editor/blob/050624a/client/src/REST/client.ts#L170)
+Defined in: [src/REST/client.ts:170](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/REST/client.ts#L170)
 
 ___
 
@@ -149,7 +149,7 @@ Name | Type |
 
 **Returns:** *Promise*<{ `sessionToken`: *string* ; `user`: *DUser*  }\>
 
-Defined in: [src/REST/client.ts:40](https://github.com/actually-colab/editor/blob/050624a/client/src/REST/client.ts#L40)
+Defined in: [src/REST/client.ts:40](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/REST/client.ts#L40)
 
 ___
 
@@ -167,7 +167,7 @@ Name | Type | Description |
 
 **Returns:** *Promise*<{ `sessionToken`: *string* ; `user`: *DUser*  }\>
 
-Defined in: [src/REST/client.ts:75](https://github.com/actually-colab/editor/blob/050624a/client/src/REST/client.ts#L75)
+Defined in: [src/REST/client.ts:75](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/REST/client.ts#L75)
 
 ___
 
@@ -185,7 +185,7 @@ Name | Type | Description |
 
 **Returns:** *Promise*<{ `sessionToken`: *string* ; `user`: *DUser*  }\>
 
-Defined in: [src/REST/client.ts:86](https://github.com/actually-colab/editor/blob/050624a/client/src/REST/client.ts#L86)
+Defined in: [src/REST/client.ts:86](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/REST/client.ts#L86)
 
 ___
 
@@ -203,7 +203,7 @@ Name | Type | Description |
 
 **Returns:** *void*
 
-Defined in: [src/REST/client.ts:36](https://github.com/actually-colab/editor/blob/050624a/client/src/REST/client.ts#L36)
+Defined in: [src/REST/client.ts:36](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/REST/client.ts#L36)
 
 ___
 
@@ -224,4 +224,4 @@ Name | Type | Description |
 
 **Returns:** *Promise*<Notebook\>
 
-Defined in: [src/REST/client.ts:138](https://github.com/actually-colab/editor/blob/050624a/client/src/REST/client.ts#L138)
+Defined in: [src/REST/client.ts:138](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/REST/client.ts#L138)

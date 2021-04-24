@@ -20,7 +20,7 @@ hide_title: true
 
 • **email**: *string*
 
-Defined in: [src/types.ts:7](https://github.com/actually-colab/editor/blob/050624a/client/src/types.ts#L7)
+Defined in: [src/types.ts:7](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/types.ts#L7)
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 • `Optional` **name**: *string*
 
-Defined in: [src/types.ts:8](https://github.com/actually-colab/editor/blob/050624a/client/src/types.ts#L8)
+Defined in: [src/types.ts:8](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/types.ts#L8)
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 Overrides: void
 
-Defined in: [src/types.ts:6](https://github.com/actually-colab/editor/blob/050624a/client/src/types.ts#L6)
+Defined in: [src/types.ts:6](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/types.ts#L6)
