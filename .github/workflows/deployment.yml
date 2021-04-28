@@ -1,0 +1,30 @@
+name: Actually Colab API Deployment
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.release.target_commitish }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Install dependencies for server
+        run: yarn install --frozen-lockfile
+
+      - name: Publish
+        uses: netlify/actions/build@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
