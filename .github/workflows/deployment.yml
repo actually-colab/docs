@@ -34,9 +34,13 @@ jobs:
         run: yarn install --frozen-lockfile
         working-directory: ./editor/client
 
-      - name: Publish
-        uses: netlify/actions/build@master
+      - name: Build Docs
+        run: yarn build
+        working-directory: ./docs
+
+      - name: Deploy
+        run: yarn netlify deploy --prod
+        working-directory: ./docs
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          NETLIFY_BASE: docs
