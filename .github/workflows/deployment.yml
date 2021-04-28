@@ -8,7 +8,6 @@ on:
 
 jobs:
   docs:
-    environment: Netlify
     runs-on: ubuntu-latest
     steps:
       - name: Check out Git repository
