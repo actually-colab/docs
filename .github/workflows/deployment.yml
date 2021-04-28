@@ -13,18 +13,30 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v2
         with:
-          ref: ${{ github.event.release.target_commitish }}
+          path: docs
+
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+        with:
+          path: editor
+          repository: actually-colab/editor
 
       - name: Set up Node.js
         uses: actions/setup-node@v1
         with:
           node-version: 12
 
-      - name: Install dependencies for server
+      - name: Install docs dependencies
         run: yarn install --frozen-lockfile
+        working-directory: ./docs
+
+      - name: Install editor/client dependencies
+        run: yarn install --frozen-lockfile
+        working-directory: ./editor/client
 
       - name: Publish
         uses: netlify/actions/build@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_BASE: docs
