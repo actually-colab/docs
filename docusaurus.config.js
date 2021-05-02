@@ -22,7 +22,8 @@ module.exports = {
           label: "Docs",
           position: "left",
         },
-        { to: "blog", label: "Blog", position: "left" },
+        { to: "engineering-blog", label: "Engineering Blog", position: "left" },
+        { to: "blog", label: "Progress Blog", position: "left" },
         {
           href: "https://github.com/actually-colab/docs",
           label: "GitHub",
@@ -125,6 +126,14 @@ module.exports = {
       {
         entryPoints: ["../editor/client/src/index.ts"],
         tsconfig: "../editor/client/tsconfig.json",
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-blog",
+      {
+        id: "engineering-blog",
+        routeBasePath: "engineering-blog",
+        path: "./engineering-blog",
       },
     ],
   ],
