@@ -28,4 +28,4 @@ hide_title: true
 
 Ƭ **LoginData**: [*DevLoginData*](interfaces/devlogindata.md) \| [*SessionRefreshLoginData*](interfaces/sessionrefreshlogindata.md) \| [*GoogleLoginData*](interfaces/googlelogindata.md)
 
-Defined in: [src/types.ts:21](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/types.ts#L21)
+Defined in: [src/types.ts:21](https://github.com/actually-colab/editor/blob/b1f483c/client/src/types.ts#L21)

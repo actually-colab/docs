@@ -33,7 +33,7 @@ Name | Type | Description |
 
 Overrides: void
 
-Defined in: [src/socket/client.ts:108](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/socket/client.ts#L108)
+Defined in: [src/socket/client.ts:108](https://github.com/actually-colab/editor/blob/b1f483c/client/src/socket/client.ts#L108)
 
 ## Properties
 
@@ -51,7 +51,7 @@ Will fail if cell lock not acquired.
 
 **`param`** Cell data to replace with
 
-Defined in: [src/socket/client.ts:414](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/socket/client.ts#L414)
+Defined in: [src/socket/client.ts:414](https://github.com/actually-colab/editor/blob/b1f483c/client/src/socket/client.ts#L414)
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 • `Private` **socketClient**: *w3cwebsocket*
 
-Defined in: [src/socket/client.ts:108](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/socket/client.ts#L108)
+Defined in: [src/socket/client.ts:108](https://github.com/actually-colab/editor/blob/b1f483c/client/src/socket/client.ts#L108)
 
 ___
 
@@ -75,7 +75,7 @@ Sends a compressed output for a cell to be shared with users in the notebook.
 
 **`param`** Content to share
 
-Defined in: [src/socket/client.ts:447](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/socket/client.ts#L447)
+Defined in: [src/socket/client.ts:447](https://github.com/actually-colab/editor/blob/b1f483c/client/src/socket/client.ts#L447)
 
 ___
 
@@ -123,7 +123,7 @@ Disconnects from server, but does not remove event listeners.
 
 **Returns:** *void*
 
-Defined in: [src/socket/client.ts:276](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/socket/client.ts#L276)
+Defined in: [src/socket/client.ts:276](https://github.com/actually-colab/editor/blob/b1f483c/client/src/socket/client.ts#L276)
 
 ___
 
@@ -141,7 +141,7 @@ Name | Type | Description |
 
 **Returns:** *void*
 
-Defined in: [src/socket/client.ts:309](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/socket/client.ts#L309)
+Defined in: [src/socket/client.ts:309](https://github.com/actually-colab/editor/blob/b1f483c/client/src/socket/client.ts#L309)
 
 ___
 
@@ -160,7 +160,7 @@ Name | Type | Description |
 
 **Returns:** *void*
 
-Defined in: [src/socket/client.ts:375](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/socket/client.ts#L375)
+Defined in: [src/socket/client.ts:375](https://github.com/actually-colab/editor/blob/b1f483c/client/src/socket/client.ts#L375)
 
 ___
 
@@ -179,7 +179,7 @@ Name | Type | Description |
 
 **Returns:** *void*
 
-Defined in: [src/socket/client.ts:436](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/socket/client.ts#L436)
+Defined in: [src/socket/client.ts:436](https://github.com/actually-colab/editor/blob/b1f483c/client/src/socket/client.ts#L436)
 
 ___
 
@@ -192,7 +192,7 @@ and closes the connection to the Actually Colab Socket API.
 
 **Returns:** *void*
 
-Defined in: [src/socket/client.ts:284](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/socket/client.ts#L284)
+Defined in: [src/socket/client.ts:284](https://github.com/actually-colab/editor/blob/b1f483c/client/src/socket/client.ts#L284)
 
 ___
 
@@ -244,7 +244,7 @@ ___
 
 **Returns:** *void*
 
-Defined in: [src/socket/client.ts:124](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/socket/client.ts#L124)
+Defined in: [src/socket/client.ts:124](https://github.com/actually-colab/editor/blob/b1f483c/client/src/socket/client.ts#L124)
 
 ___
 
@@ -309,7 +309,7 @@ Name | Type | Description |
 
 **Returns:** *void*
 
-Defined in: [src/socket/client.ts:385](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/socket/client.ts#L385)
+Defined in: [src/socket/client.ts:385](https://github.com/actually-colab/editor/blob/b1f483c/client/src/socket/client.ts#L385)
 
 ___
 
@@ -410,7 +410,7 @@ Name | Type | Description |
 
 **Returns:** *void*
 
-Defined in: [src/socket/client.ts:300](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/socket/client.ts#L300)
+Defined in: [src/socket/client.ts:300](https://github.com/actually-colab/editor/blob/b1f483c/client/src/socket/client.ts#L300)
 
 ___
 
@@ -478,7 +478,7 @@ Name | Type | Description |
 
 **Returns:** *void*
 
-Defined in: [src/socket/client.ts:477](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/socket/client.ts#L477)
+Defined in: [src/socket/client.ts:477](https://github.com/actually-colab/editor/blob/b1f483c/client/src/socket/client.ts#L477)
 
 ___
 
@@ -495,7 +495,7 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [src/socket/client.ts:290](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/socket/client.ts#L290)
+Defined in: [src/socket/client.ts:290](https://github.com/actually-colab/editor/blob/b1f483c/client/src/socket/client.ts#L290)
 
 ___
 
@@ -516,7 +516,7 @@ Name | Type | Description |
 
 **Returns:** *void*
 
-Defined in: [src/socket/client.ts:321](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/socket/client.ts#L321)
+Defined in: [src/socket/client.ts:321](https://github.com/actually-colab/editor/blob/b1f483c/client/src/socket/client.ts#L321)
 
 ___
 
@@ -537,7 +537,7 @@ Name | Type | Description |
 
 **Returns:** *void*
 
-Defined in: [src/socket/client.ts:351](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/socket/client.ts#L351)
+Defined in: [src/socket/client.ts:351](https://github.com/actually-colab/editor/blob/b1f483c/client/src/socket/client.ts#L351)
 
 ___
 
@@ -556,7 +556,7 @@ Name | Type | Description |
 
 **Returns:** *void*
 
-Defined in: [src/socket/client.ts:365](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/socket/client.ts#L365)
+Defined in: [src/socket/client.ts:365](https://github.com/actually-colab/editor/blob/b1f483c/client/src/socket/client.ts#L365)
 
 ___
 
@@ -576,7 +576,7 @@ Name | Type | Description |
 
 **Returns:** *void*
 
-Defined in: [src/socket/client.ts:396](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/socket/client.ts#L396)
+Defined in: [src/socket/client.ts:396](https://github.com/actually-colab/editor/blob/b1f483c/client/src/socket/client.ts#L396)
 
 ___
 
@@ -596,4 +596,4 @@ Name | Type | Description |
 
 **Returns:** *void*
 
-Defined in: [src/socket/client.ts:336](https://github.com/actually-colab/editor/blob/fdafbfb/client/src/socket/client.ts#L336)
+Defined in: [src/socket/client.ts:336](https://github.com/actually-colab/editor/blob/b1f483c/client/src/socket/client.ts#L336)
