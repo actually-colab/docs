@@ -43,7 +43,7 @@ We also used the [Jupyter Kernel Gateway](https://github.com/jupyter/kernel_gate
 Finally we made the browser-based version of the editor automatically check to see if it can connect to the kernel and allowed users to configure their kernel gateway URI in the editor.
 This had some interesting implications:
 
-- The native Electron application became entirely optional. Users who wish to have more control over the process can run the Kernel Gateway in the terminal using commands documented in our desktop README
+- The native Electron application became entirely optional. Users who wish to have more control over the process can run the Kernel Gateway in the terminal using commands documented in our [launcher's README](https://github.com/actually-colab/desktop-launcher#the-kernel-gateway)
 - The user could, in theory, connect to a Kernel that isn't on their own machine since the gateway URI is configurable. This would allow the user to spawn the Kernel Gateway on a VM on AWS for instance and then connect remotely for more power while keeping the editor UI in their local browser
 
 ![Architecture diagram](https://raw.githubusercontent.com/actually-colab/desktop/master/.readme/img/architecture.png)
