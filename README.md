@@ -1,4 +1,4 @@
-<img src=".readme/img/header.png" width="100%" />
+<img src="https://raw.githubusercontent.com/actually-colab/graphics/master/header/header.png" width="100%" />
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e2493e3e-9a8e-4a2d-9aa8-812ed9065e99/deploy-status)](https://app.netlify.com/sites/actually-colab-docs/deploys) [![Actually Colab API Deployment](https://github.com/actually-colab/docs/actions/workflows/deployment.yml/badge.svg)](https://github.com/actually-colab/docs/actions/workflows/deployment.yml) ![GitHub](https://img.shields.io/github/license/actually-colab/docs)
 
